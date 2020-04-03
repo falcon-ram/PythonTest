@@ -1,0 +1,12 @@
+
+.vscode/settings.json
+*.pyc
+*.pth
+Environments/
+*/.vscode/
+*.jpg
+*/data/
+Django/django_project/pwd.txt
+Django/django_project/media/profile_pics/
+Django/django_project/posts.json
+Django/django_project/db.sqlite3

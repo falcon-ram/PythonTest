@@ -1,0 +1,23 @@
+<!-- Declaring for inheritance-->
+{% extends "blog/base.html" %}
+
+<!-- Now overriding the "block content" section -->
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            <!-- Cross site request forgery protection token. To prevent cross site attacks -->
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Delete Post</legend>
+                <p class="article-content">Are you sure you want to delete the post:</p>
+                <div>
+                    <h2 class="article-title">{{ object.title }}</h2>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+                <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
